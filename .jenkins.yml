@@ -1,4 +1,5 @@
 language: java
+maven: 3.2.1
 script:
   - mvn clean install
   - echo blabla
