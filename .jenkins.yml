@@ -1,5 +1,7 @@
 language: java
 maven: 3.2.1
 script:
+  - which java
+  - java -version
+  - mvn -version
   - mvn clean install
-  - echo blabla
