@@ -1,6 +1,6 @@
 language: java
 maven: 3.3.9
-jdk: 1.8.0_91-b02
+jdk: 1.8.0_91-b14
 script:
   - mvn help:system
   - mvn clean install
