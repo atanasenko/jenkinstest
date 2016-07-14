@@ -2,9 +2,6 @@ language: node_js
 node_js: 4.2.1
 npm: 2.1.4
 script:
-  - env
-  - echo QNODE_VERSION `which node`
-  - echo QNPM_VERSION `which npm`
   - npm --version
   - node --version
   - npm install lodash
