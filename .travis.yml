@@ -3,9 +3,14 @@ node_js: 4.2.1
 npm: 2.1.4
 flows:
   master:
-    - node: centos
-    - shell: |
-        #!/bin/bash -xe
-        env
-        npm --version
-        node --version
+    - parallel:
+      - node: master
+      - shell: ping 127.0.0.1 -n 6
+      - node: centos
+      - shell: |
+          #!/bin/bash -xe
+          env
+          npm --version
+          node --version
+    - node: master
+    - shell: echo done
