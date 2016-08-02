@@ -10,7 +10,7 @@ flows:
     - shell: echo done
   nested1:
     - node: master
-    - shell: ping 127.0.0.1 -n 6
+    - shell: ping 127.0.0.1 -n 60
 
   nested2:
     - node: centos
