@@ -1,24 +1,6 @@
 language: workflow
-node_js: 4.2.1
-npm: 2.1.4
+inherit: job://test
 flows:
   master:
-    - parallel:
-      - call: nested1
-      - call: nested2
-    - node: master
-    - shell: echo done
-  nested1:
-    - node: master
-    - shell: ping 127.0.0.1 -n 60
-
-  nested2:
-    - node: centos
-    - shell: |
-        #!/bin/bash -xe
-        env
-        npm --version
-        node --version
-        RED='\033[0;31m'
-        NC='\033[0m' # No Color
-        printf "Ansi ${RED}color${NC} test\n"
+    - call: sub(good)
+    - call: sub(end)
